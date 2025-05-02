@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro FURIA</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0a0a0a;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 2px solid #9147ff;
+      padding-bottom: 5px;
+    }
+
+    form {
+      background-color: #111111;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(145, 71, 255, 0.3);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #222;
+      border-radius: 8px;
+      background-color: #1a1a1a;
+      color: #fff;
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    input:focus {
+      border-color: #9147ff;
+      outline: none;
+    }
+
+    button {
+      margin-top: 1rem;
+      width: 105%;
+      padding: 10px;
+      background-color: #9147ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #a674ff;
+    }
+
+    @media (max-width: 480px) {
+      form {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Cadastro FURIA</h2>
+  <form action="https://webhook.n8n.cloud/webhook/cadastro-usuario" method="POST">
+    <label>Nome:
+      <input type="text" name="nome" required />
+    </label>
+    <label>Email:
+      <input type="email" name="email" required />
+    </label>
+    <label>CPF:
+      <input type="text" name="cpf" required />
+    </label>
+    <label>Endereço:
+      <input type="text" name="endereco" required />
+    </label>
+    <label>Interesses:
+      <input type="text" name="interesses" />
+    </label>
+    <label>Eventos que tem participado:
+      <input type="text" name="eventos" />
+    </label>
+    <label>Compras no último ano:
+      <input type="text" name="compras" />
+    </label>
+    <button type="submit">Enviar</button>
+  </form>
+</body>
+</html>
