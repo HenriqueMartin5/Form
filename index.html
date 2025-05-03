@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,11 +15,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
     }
 
     h2 {
+      margin-top: 2rem;
       margin-bottom: 1rem;
       color: #ffffff;
       text-transform: uppercase;
@@ -34,6 +35,7 @@
       box-shadow: 0 0 15px rgba(145, 71, 255, 0.3);
       width: 90%;
       max-width: 400px;
+      margin-bottom: 2rem;
     }
 
     label {
@@ -43,7 +45,9 @@
     }
 
     input[type="text"],
-    input[type="email"] {
+    input[type="email"],
+    input[type="number"],
+    select {
       width: 100%;
       padding: 10px;
       border: 2px solid #222;
@@ -54,7 +58,8 @@
       margin-top: 4px;
     }
 
-    input:focus {
+    input:focus,
+    select:focus {
       border-color: #9147ff;
       outline: none;
     }
@@ -83,8 +88,9 @@
     }
   </style>
 </head>
+
 <body>
-  <h2>Cadastro FURIA</h2>
+  <h2>Cadastro Fã de Esports</h2>
   <form action="https://devmartinsvasc.app.n8n.cloud/webhook-test/fe615c11-2ff4-47db-a5ea-587c8efb3c9d" method="POST">
     <label>Nome:
       <input type="text" name="nome" required />
@@ -95,19 +101,33 @@
     <label>CPF:
       <input type="text" name="cpf" required />
     </label>
-    <label>Endereço:
-      <input type="text" name="endereco" required />
+    <label>Estado:
+      <input type="text" name="estado" required />
     </label>
-    <label>Interesses:
-      <input type="text" name="interesses" />
+
+    <label>Qual seu time favorito?
+      <select name="timeFavorito">
+        <option value="FURIA">FURIA</option>
+        <option value="LOUD">LOUD</option>
+        <option value="MIBR">MIBR</option>
+        <option value="Outro">Outro</option>
+      </select>
     </label>
-    <label>Eventos que tem participado:
-      <input type="text" name="eventos" />
+
+    <label>Quantos eventos de esports você já participou?
+      <input type="number" name="eventos" min="0" />
     </label>
-    <label>Compras no último ano:
+
+    <label>Qual game você joga atualmente?
+      <input type="text" name="jogoAtual" />
+    </label>
+
+    <label>Compras no último ano dentro do mercado de esports:
       <input type="text" name="compras" />
     </label>
+
     <button type="submit">Enviar</button>
   </form>
 </body>
+
 </html>
