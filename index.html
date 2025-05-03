@@ -47,6 +47,7 @@
     input[type="text"],
     input[type="email"],
     input[type="number"],
+    input[type="file"],
     select {
       width: 100%;
       padding: 10px;
@@ -56,6 +57,12 @@
       color: #fff;
       font-size: 0.95rem;
       margin-top: 4px;
+    }
+
+    input[type="file"] {
+      padding: 8px;
+      background-color: #1a1a1a;
+      color-scheme: dark;
     }
 
     input:focus,
@@ -91,7 +98,7 @@
 
 <body>
   <h2>Cadastro Fã de Esports</h2>
-  <form action="https://devmartinsvasc.app.n8n.cloud/webhook-test/fe615c11-2ff4-47db-a5ea-587c8efb3c9d" method="POST">
+  <form action="https://devmartinsvasc.app.n8n.cloud/webhook-test/kyf-webhook" method="POST" enctype="multipart/form-data">
     <label>Nome:
       <input type="text" name="nome" required />
     </label>
@@ -106,7 +113,7 @@
     </label>
 
     <label>Qual seu time favorito?
-      <select name="timeFavorito">
+      <select name="timeFavorito" required>
         <option value="FURIA">FURIA</option>
         <option value="LOUD">LOUD</option>
         <option value="MIBR">MIBR</option>
@@ -115,15 +122,19 @@
     </label>
 
     <label>Quantos eventos de esports você já participou?
-      <input type="number" name="eventos" min="0" />
+      <input type="number" name="eventos" min="0" required />
     </label>
 
     <label>Qual game você joga atualmente?
-      <input type="text" name="jogoAtual" />
+      <input type="text" name="jogoAtual" required />
     </label>
 
     <label>Compras no último ano dentro do mercado de esports:
-      <input type="text" name="compras" />
+      <input type="text" name="compras" required />
+    </label>
+
+    <label for="documento">Envie seu RG/CNH:
+      <input type="file" name="documento" accept="image/*" required />
     </label>
 
     <button type="submit">Enviar</button>
